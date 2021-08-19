@@ -1,17 +1,7 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 const urlBase = process.env.API_URL;
 
-const readUrl = (url = '') => (url.startsWith('http://') || url.startsWith('https://') ? url : `${urlBase}/${url}`);
-
-const get = (url = '', headers = {}) => axios.get(readUrl(url), {
-  headers: {
-    Accept: 'application/json',
-    'Content-Type': 'application/json',
-    ...headers,
-  },
-});
 const useFetch = (url: string) => {
   const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
@@ -36,8 +26,16 @@ const useFetch = (url: string) => {
     loading,
   };
 };
+const doFetch = async (url: string) => {
+  const response = await fetch(url, {
+    mode: 'cors',
+    headers: { 'Content-Type': 'application/json' },
+  });
+  const voteList = await response.json();
+  return voteList;
+};
 export default {
-  get,
   urlBase,
   useFetch,
+  doFetch,
 };
