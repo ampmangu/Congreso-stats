@@ -16,8 +16,8 @@ const Session = () => {
 
             <p>{data.title}</p>
             <p>{data.date}</p>
-            {Object.entries(data.values).map((value:any[], index) => (
-              <p key={index}>
+            {Object.entries(data.values).map((value:any[]) => (
+              <p key={value[0]}>
                 {value[0]}
                 :
                 {value[1].join('-')}

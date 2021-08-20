@@ -13,8 +13,7 @@ const useFetch = (url: string) => {
         mode: 'cors',
         headers: { 'Content-Type': 'application/json' },
       });
-      const results = await response.json();
-      const item = results;
+      const item = await response.json();
       setData(item);
       setLoading(false);
     };
@@ -31,8 +30,7 @@ const doFetch = async (url: string) => {
     mode: 'cors',
     headers: { 'Content-Type': 'application/json' },
   });
-  const voteList = await response.json();
-  return voteList;
+  return response.json();
 };
 export default {
   urlBase,

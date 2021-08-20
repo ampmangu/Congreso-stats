@@ -1,4 +1,4 @@
-export default interface IVote {
+export interface IVote {
   id: string;
   date: string;
   title: string;
