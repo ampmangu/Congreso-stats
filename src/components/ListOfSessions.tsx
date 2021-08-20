@@ -4,7 +4,7 @@ import httpClient from './service/httpClient';
 
 const ListOfSessions = () => {
   const [selectValue, setSelect] = useState(''); // initialize state
-  const [chosenDate, setDate] = useState('');
+  const [, setDate] = useState('');
   const [listVotes, setVotes] = useState([]);
   const {
     data,
@@ -48,8 +48,8 @@ const ListOfSessions = () => {
         && (
         <div>
           <ul>
-            {listVotes.map((element: any, index) => (
-              <li key={index} value={element.id}>
+            {listVotes.map((element: any) => (
+              <li key={element.id} value={element.id}>
                 <Link to={`/sessions/${element.id}`}>{element.title}</Link>
               </li>
             ))}
