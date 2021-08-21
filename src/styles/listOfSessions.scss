@@ -1,0 +1,21 @@
+.listOfSessions {
+  width: 50%;
+  margin: 10px auto auto;
+  color: #C55186;
+  form div button {
+    background: linear-gradient(
+                    45deg, #f857a8, #ff5858);
+  }
+
+  form div button, select {
+    border: 1px solid gray;
+    margin: 0;
+    padding: 0 .6em;
+    height: 2.3em;
+    box-sizing: border-box;
+    border-radius: 10px;
+  }
+  form div select {
+    margin-right: 5px;
+  }
+}

@@ -4,6 +4,7 @@ import Home from './components/Home';
 import ListOfSessions from './components/ListOfSessions';
 import Session from './components/Session';
 import Navigation from './components/navigation/Navigation';
+import './styles/app.scss';
 
 const App: React.FC<{}> = () => (
   <div className="App">

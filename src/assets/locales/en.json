@@ -1,0 +1,12 @@
+{
+  "hello_world": "Hello worlds!",
+  "select_language": "Select a language",
+  "home": "HOME",
+  "sessions": "SESSIONS",
+  "list_of_sessions": "List of sessions",
+  "session_submit": "Submit",
+  "session_title": "Title",
+  "session_date": "Date:",
+  "session_votes": "Results"
+
+}
