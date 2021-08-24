@@ -7,6 +7,10 @@
   "session_submit": "Submit",
   "session_title": "Title",
   "session_date": "Date:",
-  "session_votes": "Results"
+  "session_votes": "Results",
+  "in_favour": "In favour",
+  "against": "Against",
+  "abstentions": "Abstentions",
+  "missing": "Missing"
 
 }

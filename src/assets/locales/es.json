@@ -7,5 +7,9 @@
   "session_submit": "Consultar",
   "session_title": "Título",
   "session_date": "Fecha:",
-  "session_votes": "Votaciones"
+  "session_votes": "Votaciones",
+  "in_favour": "A favor",
+  "against": "En contra",
+  "abstentions": "Abstenciones",
+  "missing": "Faltaron"
 }
