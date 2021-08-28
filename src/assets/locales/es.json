@@ -3,7 +3,9 @@
   "select_language": "Escoge un idioma",
   "home": "INICIO",
   "sessions": "SESIONES",
+  "groups": "GRUPOS",
   "list_of_sessions": "Listado de sesiones",
+  "list_of_groups": "Listado de grupos parlamentarios:",
   "session_submit": "Consultar",
   "session_title": "Título",
   "session_date": "Fecha:",
@@ -11,5 +13,11 @@
   "in_favour": "A favor",
   "against": "En contra",
   "abstentions": "Abstenciones",
-  "missing": "Faltaron"
+  "missing": "Faltaron",
+  "vote_positive": "Votó a favor",
+  "vote_negative": "Votó en contra",
+  "vote_abstention": "Abstención",
+  "vote_not_present": "No estuvieron presentes",
+  "more_info": "Mas información en el link",
+  "breakdown_session": "Recuento de votos"
 }
