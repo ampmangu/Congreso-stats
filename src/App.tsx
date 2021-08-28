@@ -4,6 +4,9 @@ import Home from './components/Home';
 import ListOfSessions from './components/ListOfSessions';
 import Session from './components/Session';
 import Navigation from './components/navigation/Navigation';
+import './styles/app.scss';
+import ListOfGroups from './components/ListOfGroups';
+import Group from './components/Group';
 
 const App: React.FC<{}> = () => (
   <div className="App">
@@ -12,6 +15,10 @@ const App: React.FC<{}> = () => (
     </header>
     <main>
       <Switch>
+        <Route path="/groups/:group" component={Group} />
+        <Route path="/groups">
+          <ListOfGroups />
+        </Route>
         <Route path="/sessions/:id" component={Session} />
         <Route path="/sessions">
           <ListOfSessions />

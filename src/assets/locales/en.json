@@ -1,0 +1,24 @@
+{
+  "hello_world": "Hello worlds!",
+  "select_language": "Select a language",
+  "home": "HOME",
+  "sessions": "SESSIONS",
+  "groups": "GROUPS",
+  "list_of_sessions": "List of sessions",
+  "list_of_groups": "List of groups",
+  "session_submit": "Submit",
+  "session_title": "Title",
+  "session_date": "Date:",
+  "session_votes": "Results",
+  "in_favour": "In favour",
+  "against": "Against",
+  "abstentions": "Abstentions",
+  "missing": "Missing",
+  "vote_positive": "Voted in favour",
+  "vote_negative": "Voted against",
+  "vote_abstention": "Abstention",
+  "vote_not_present": "Not present",
+  "more_info": "More information here",
+  "breakdown_session": "Breakdown of the session"
+
+}

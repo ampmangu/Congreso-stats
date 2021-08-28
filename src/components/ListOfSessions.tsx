@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import httpClient from './service/httpClient';
+import '../styles/listOfSessions.scss';
 
 const ListOfSessions = () => {
   const [selectValue, setSelect] = useState(''); // initialize state
@@ -27,10 +29,11 @@ const ListOfSessions = () => {
         setVotes(r);
       });
   };
+  const { t } = useTranslation();
 
   return (
-    <div>
-      List of Sessions
+    <div className="listOfSessions">
+      {t('list_of_sessions')}
       {loading ? <div>...loading</div>
         : (
           <form onSubmit={handleSubmit}>
@@ -40,7 +43,7 @@ const ListOfSessions = () => {
                   <option key={option} value={option}>{option}</option>
                 ))}
               </select>
-              <input type="submit" value="Submit" />
+              <button id="submit_button" type="submit" name={t('session_submit')}>{t('session_submit')}</button>
             </div>
           </form>
         )}
@@ -54,10 +57,8 @@ const ListOfSessions = () => {
               </li>
             ))}
           </ul>
-
         </div>
         )}
-
     </div>
   );
 };
