@@ -1,5 +1,5 @@
-$color-primary: #f857a8;
-$color-secondary: #ff5858;
+$color-primary: #0D357B;
+$color-secondary: #2c5aa8;
 $color-neutral-lt: #fff;
 $color-neutral-med: #ddd;
 $color-neutral-dk: #444;
@@ -236,7 +236,7 @@ a:hover {
   }
 }
 #my-nav {
-  background: mistyrose;
+  @include main-gradient;
 }
 #responsive-navbar-bar {
   margin-left: auto;

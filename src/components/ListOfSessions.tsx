@@ -53,7 +53,7 @@ const ListOfSessions = () => {
           <ul>
             {listVotes.map((element: any) => (
               <li key={element.id} value={element.id}>
-                <Link to={`/sessions/${element.id}`}>{element.title}</Link>
+                <Link to={`/sessions/${element.id}`}>{element.titulo + element.titulosubgrupo}</Link>
               </li>
             ))}
           </ul>
