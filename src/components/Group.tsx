@@ -1,15 +1,32 @@
 import React from 'react';
 import { Link, useParams, withRouter } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import ReactPaginate from 'react-paginate';
 import httpClient from './service/httpClient';
 import '../styles/group.scss';
 
 const Group = () => {
+  const state = {
+    data: [],
+    offset: 0,
+  };
   const { group } : any = useParams();
+
+  function fetchData() {
+    const {
+      data,
+      loading,
+    } = httpClient.useFetch(`${httpClient.urlBase!}/groups/byGroup?group=${group}&page=${state.offset}`);
+    return {
+      data,
+      loading,
+    };
+  }
+
   const {
     data,
     loading,
-  } = httpClient.useFetch(`${httpClient.urlBase!}/groups/byGroup?group=${group}`);
+  } = fetchData();
   const { t } = useTranslation();
   const getVoteResult = (arrayVotes: any) => {
     const index = arrayVotes.indexOf(Math.max.apply(null, arrayVotes));
@@ -22,6 +39,12 @@ const Group = () => {
     }
     return 'vote_not_present';
   };
+  const handlePageClicked = (data: any) => {
+    const { selected } = data;
+    state.offset += 1;
+    fetchData();
+    console.log(selected);
+  };
   return (
     <>
 
@@ -32,7 +55,7 @@ const Group = () => {
         {loading ? <div>...loading</div>
           : (
             <>
-              {data.map((element: any) => (
+              {data.votes.map((element: any) => (
                 <div className="group-session">
                   <h2 className="titleGroup">{t('session_title')}</h2>
                   <p>{element.title}</p>
@@ -46,6 +69,18 @@ const Group = () => {
                   </div>
                 </div>
               ))}
+              <ReactPaginate
+                previousLabel="previous"
+                nextLabel="next"
+                breakLabel="..."
+                breakClassName="break-me"
+                pageCount={Math.ceil(data.size / data.maximumSize)}
+                marginPagesDisplayed={2}
+                pageRangeDisplayed={5}
+                onPageChange={handlePageClicked}
+                containerClassName="pagination"
+                activeClassName="active"
+              />
             </>
           )}
       </div>
