@@ -19,5 +19,6 @@
   "vote_abstention": "Abstención",
   "vote_not_present": "No estuvieron presentes",
   "more_info": "Mas información en el link",
-  "breakdown_session": "Recuento de votos"
+  "breakdown_session": "Votos por grupo",
+  "detailed_sesssion": "Votos por diputado"
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Votes({ values, index }: any) {
+export default function GroupVotes({ values, index }: any) {
   return (
     <>
       <div className="votes-group-name" style={{ gridArea: `gr${index};` }}><Link to={`/groups/${values[1].grupo.replace(/\s/g, '')}`}>{values[1].grupo}</Link></div>
