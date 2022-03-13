@@ -3,6 +3,7 @@ import { Link, useParams, withRouter } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import httpClient from './service/httpClient';
 import '../styles/group.scss';
+import LoadingAnimation from './LoadingAnimation';
 
 const Group = () => {
   const { group } : any = useParams();
@@ -35,7 +36,9 @@ const Group = () => {
         <h2 className="group-name">
           {group}
         </h2>
-        {loading ? <div>...loading</div>
+        {loading ? (
+          <LoadingAnimation />
+        )
           : (
             <>
               {data.map((element: any) => (
