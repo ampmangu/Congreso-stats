@@ -13,7 +13,9 @@
     margin-right: 10px;
     display: inline;
   }
-
+  .dateSessionParent {
+    padding-bottom: 10px;
+  }
   .dateSession + p {
     display: inline;
   }
@@ -33,7 +35,7 @@
     flex-wrap: wrap;
   }
   .flex-cell {
-    flex: 0 0 20%;
+    flex: 0 0 15%;
     display: flex;
     justify-content: center;
     align-items: stretch;
@@ -64,7 +66,21 @@
     h3, p {
       font-size: smaller;
       margin-left: 10px;
+      margin-right: 5px;
     }
+    .voted {
+      margin-left: 0;
+    }
+    .sí {
+      color: green;
+    }
+    .no {
+      color: red;
+    }
+    .abstención {
+      color: yellow;
+    }
+
   }
 }
 .section-grid {

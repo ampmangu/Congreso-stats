@@ -28,7 +28,7 @@ const Session = () => {
               <button
                 onClick={() => setVisible(!visible)}
               >
-                {visible ? 'Hide' : 'Show'}
+                {visible ? 'Ocultar' : 'Mostrar'}
               </button>
             </div>
             {visible
@@ -50,7 +50,7 @@ const Session = () => {
               <button
                 onClick={() => setSecondVisible(!secondVisible)}
               >
-                {secondVisible ? 'Hide' : 'Show'}
+                {secondVisible ? 'Ocultar' : 'Mostrar'}
               </button>
             </div>
             {secondVisible && (
