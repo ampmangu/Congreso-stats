@@ -11,8 +11,14 @@ const Group = () => {
     loading,
   } = httpClient.useFetch(`${httpClient.urlBase!}/groups/byGroup?group=${group}`);
   const { t } = useTranslation();
+
+  function returnInt(element: string) {
+    return parseInt(element, 10);
+  }
+
   const getVoteResult = (arrayVotes: any) => {
-    const index = arrayVotes.indexOf(Math.max.apply(null, arrayVotes));
+    const arrayNumber = arrayVotes.map(returnInt);
+    const index = arrayNumber.indexOf(Math.max.apply(null, arrayNumber));
     if (index === 0) {
       return 'vote_positive';
     } if (index === 1) {
@@ -35,14 +41,15 @@ const Group = () => {
               {data.map((element: any) => (
                 <div className="group-session">
                   <h2 className="titleGroup">{t('session_title')}</h2>
-                  <p>{element.title}</p>
+                  <p>{element.titulo + element.titulosubgrupo}</p>
                   <h2 className="dateGroup">{t('session_date')}</h2>
-                  <p>{element.date}</p>
+                  <p>{element.fecha}</p>
                   <div className="voteInfo">
-                    {t(getVoteResult(element.values[`${group}`]))}
+                    {/* eslint-disable-next-line max-len */}
+                    {t(getVoteResult([element.aFavor, element.enContra, element.abstencion, element.nsnc]))}
                     .
                     {' '}
-                    <Link to={`/sessions/${element.id}`}>{t('more_info')}</Link>
+                    <Link to={`/sessions/${element.vid}`}>{t('more_info')}</Link>
                   </div>
                 </div>
               ))}

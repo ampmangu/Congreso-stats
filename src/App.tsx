@@ -8,7 +8,7 @@ import './styles/app.scss';
 import ListOfGroups from './components/ListOfGroups';
 import Group from './components/Group';
 
-const App: React.FC<{}> = () => (
+const App: React.FC = () => (
   <div className="App">
     <header>
       <Navigation />
