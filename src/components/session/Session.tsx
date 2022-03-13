@@ -6,6 +6,7 @@ import '../../styles/session.scss';
 import GroupVotes from './GroupVotes';
 import SessionInfo from './SessionInfo';
 import DetailedVotes from './DetailedVotes';
+import LoadingAnimation from '../LoadingAnimation';
 
 const Session = () => {
   const { id }: any = useParams();
@@ -18,7 +19,7 @@ const Session = () => {
   const [secondVisible, setSecondVisible] = React.useState(false);
   return (
     <div className="session">
-      {loading ? <div>...loading</div>
+      {loading ? <LoadingAnimation />
         : (
           <div>
             <SessionInfo data={data} s={t('session_title')} s1={t('session_date')} />

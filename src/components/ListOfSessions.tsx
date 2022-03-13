@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import httpClient from './service/httpClient';
 import '../styles/listOfSessions.scss';
+import LoadingAnimation from './LoadingAnimation';
 
 const ListOfSessions = () => {
   const [selectValue, setSelect] = useState(''); // initialize state
@@ -34,7 +35,7 @@ const ListOfSessions = () => {
   return (
     <div className="listOfSessions">
       {t('list_of_sessions')}
-      {loading ? <div>...loading</div>
+      {loading ? <LoadingAnimation />
         : (
           <form onSubmit={handleSubmit}>
             <div>
