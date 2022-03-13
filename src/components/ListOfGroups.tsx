@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import httpClient from './service/httpClient';
 import '../styles/listOfGroups.scss';
+import LoadingAnimation from './LoadingAnimation';
 
 const ListOfGroups = () => {
   const { t } = useTranslation();
@@ -13,12 +14,12 @@ const ListOfGroups = () => {
   return (
     <div className="listOfGroups">
       {t('list_of_groups')}
-      {loading ? <div>...loading</div>
+      {loading ? <LoadingAnimation />
         : (
           <ul>
             {data.map((option: string) => (
               <li>
-                <Link to={`/groups/${option}`}>{option}</Link>
+                <Link to={`/groups/${option.replace(/\s/g, '')}`}>{option}</Link>
               </li>
             ))}
           </ul>

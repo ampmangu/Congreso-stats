@@ -1,18 +1,89 @@
 .session {
-  width: 60%;
+  width: 70%;
   margin: 10px auto auto;
-  h2, .votes-col-fav, .votes-col-agn, .votes-col-abs, .votes-col-mss, .votes-group-name {
-    color: #C55186;
+  h2,
+  .votes-col-fav,
+  .votes-col-agn,
+  .votes-col-abs,
+  .votes-col-mss,
+  .votes-group-name {
+    color: #2c5aa8;
   }
   .dateSession {
     margin-right: 10px;
     display: inline;
   }
+  .dateSessionParent {
+    padding-bottom: 10px;
+  }
   .dateSession + p {
     display: inline;
+  }
+  .breakdownParent {
+    margin-top: 10px;
+    .breakdownSession {
+      margin-right: 10px;
+      display: inline
+    }
+    .breakdownSession + button {
+      display: inline;
+    }
+  }
+  .memberParent {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+  }
+  .flex-cell {
+    flex: 0 0 15%;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    padding: 0.5rem;
+    box-sizing: border-box;
+  }
+
+  .flex-cell:before {
+    content: '';
+    display: table;
+    padding-top: 100%;
+  }
+  .memberItem {
+    flex-grow: 1;
+    border: 1px solid black;
+    background: transparent;
+    color: white;
+
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    h3 {
+      color: #0D357B;
+    }
+    p {
+      color: #2c5aa8;
+    }
+    h3, p {
+      font-size: smaller;
+      margin-left: 10px;
+      margin-right: 5px;
+    }
+    .voted {
+      margin-left: 0;
+    }
+    .sí {
+      color: green;
+    }
+    .no {
+      color: red;
+    }
+    .abstención {
+      color: yellow;
+    }
+
   }
 }
 .section-grid {
   display: grid;
-  grid-template-areas:"em tf tn ta tm";
+  grid-template-areas: "em tf tn ta tm";
 }

@@ -19,6 +19,7 @@
   "vote_abstention": "Abstention",
   "vote_not_present": "Not present",
   "more_info": "More information here",
-  "breakdown_session": "Breakdown of the session"
+  "breakdown_session": "Votes by group",
+  "detailed_sesssion": "Votes by member"
 
 }
