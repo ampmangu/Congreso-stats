@@ -135,7 +135,7 @@ span.gradient {
 h1.logo {
   font-weight: 300;
   font-size: 1.75em;
-  line-height: 0.75em;
+  line-height: 0.65em;
   color: $color-neutral-lt;
 }
 
@@ -267,4 +267,30 @@ div {
 }
 header {
   flex: 0 1 auto;
+}
+
+#nav-searcher {
+  &:hover {
+    animation-name: none;
+  }
+  h1 {
+    padding: 0 0;
+    margin: 0;
+    margin-top: 15px;
+    margin-left: 10px;
+  }
+  .search-checkboxes {
+    span {
+      font-size: x-small;
+      padding-right: 0.5em;
+    }
+    input, span {
+      vertical-align: middle;
+    }
+  }
+}
+#languages {
+  h1 {
+    margin: 20px;
+  }
 }

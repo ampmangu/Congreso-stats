@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Gradient from './Gradient';
 import LanguageSelect from './LanguageSelect';
+import Searcher from './Searcher';
 
 export default function Navigation() {
   const { t } = useTranslation();
@@ -21,7 +22,8 @@ export default function Navigation() {
                 <Gradient tagToRender={(<Link className="home-link" to="/">{t('home')}</Link>)} />
                 <Gradient tagToRender={(<Link className="sessions-link" to="/sessions">{t('sessions')}</Link>)} />
                 <Gradient tagToRender={(<Link className="groups-link" to="/groups">{t('groups')}</Link>)} />
-                <Gradient tagToRender={(<LanguageSelect />)} />
+                <Gradient id={("languages")} tagToRender={(<LanguageSelect />)} />
+                <Gradient id={("nav-searcher")} tagToRender={(<Searcher />)}/>
               </Nav>
             </Navbar.Collapse>
           </div>

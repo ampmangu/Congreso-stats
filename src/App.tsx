@@ -7,6 +7,7 @@ import Navigation from './components/navigation/Navigation';
 import './styles/app.scss';
 import ListOfGroups from './components/ListOfGroups';
 import Group from './components/Group';
+import Results from './components/Results';
 
 const App: React.FC = () => (
   <div className="App">
@@ -22,6 +23,9 @@ const App: React.FC = () => (
         <Route path="/sessions/:id" component={Session} />
         <Route path="/sessions">
           <ListOfSessions />
+        </Route>
+        <Route path="/results">
+          <Results />
         </Route>
         <Route exact path="/">
           <Home />

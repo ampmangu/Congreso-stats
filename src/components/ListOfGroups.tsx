@@ -13,7 +13,7 @@ const ListOfGroups = () => {
   } = httpClient.useFetch(`${httpClient.urlBase!}/groups`);
   return (
     <div className="listOfGroups">
-      {t('list_of_groups')}
+      <h2>{t('list_of_groups')}</h2>
       {loading ? <LoadingAnimation />
         : (
           <ul>

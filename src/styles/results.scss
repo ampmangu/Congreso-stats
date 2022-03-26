@@ -1,0 +1,34 @@
+main {
+    .results {
+        h1 {
+            text-align: center;
+            color: #0d357b;
+        }
+        .listResults {
+            padding-left: 5%;
+
+            .votacion {
+                padding-bottom: 10px;
+                transition: .5s ease;
+
+                .titleVotacion {
+                    display: inline;
+                }
+                .titleVotacion + p {
+                    display: inline;
+                }
+                br {
+                    display: block;
+                    margin: 10px 0;
+                    content: "";
+                }
+            }
+            .group-votacion:hover {
+                box-shadow: -5px 0px 0px 0px lightblue;
+                -webkit-transform: translateX(-3px);
+                transform: translateX(-3px);
+                transition: 0.5s ease;
+            }
+        }
+    }
+}

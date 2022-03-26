@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default function Gradient({ tagToRender }: any) {
+export default function Gradient({ tagToRender, id }: any) {
   return (
-    <span className="gradient skew">
+    <span id={id} className="gradient skew">
       <h1 className="logo un-skew">
         {tagToRender}
       </h1>
