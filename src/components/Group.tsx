@@ -45,7 +45,7 @@ const Group = () => {
               {data.map((element: any) => (
                 <div className="group-session">
                   <h2 className="titleGroup">{t('session_title')}</h2>
-                  <p>{element.titulo + element.titulosubgrupo}</p>
+                  <p>{element.titulo + ' ' + (element.titulosubgrupo.trim() === "" ? "" : element.titulosubgrupo)}</p>
                   <h2 className="dateGroup">{t('session_date')}</h2>
                   <p>{moment(element.fecha.toString(), 'YYYY-MM-DD').format('DD-MM-YYYY')}</p>
                   <div className="voteInfo">
