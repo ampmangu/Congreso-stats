@@ -19,7 +19,6 @@ export default function Navigation() {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-bar">
               <Nav>
-                <Gradient tagToRender={(<Link className="home-link" to="/">{t('home')}</Link>)} />
                 <Gradient tagToRender={(<Link className="sessions-link" to="/sessions">{t('sessions')}</Link>)} />
                 <Gradient tagToRender={(<Link className="groups-link" to="/groups">{t('groups')}</Link>)} />
                 <Gradient id={("languages")} tagToRender={(<LanguageSelect />)} />

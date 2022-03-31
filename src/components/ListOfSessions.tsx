@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import httpClient from './service/httpClient';
 import '../styles/listOfSessions.scss';
 import LoadingAnimation from './LoadingAnimation';
+import moment from 'moment';
 
 const ListOfSessions = () => {
   const [, setDate] = useState('');
@@ -19,7 +20,7 @@ const ListOfSessions = () => {
 
   const changeSelectOptionHandler = (event: any) => {
     setLegislaturaOption(event);
-    setDatesLegislaturaOption({ value: '', label: ''});
+    setDatesLegislaturaOption({ value: '', label: '' });
   };
   const handleChange = (event: any) => {
     setDatesLegislaturaOption(event);
@@ -38,7 +39,7 @@ const ListOfSessions = () => {
 
   return (
     <div className="listOfSessions">
-      {t('list_of_sessions')}
+      <h2>{t('list_of_sessions')}</h2>
       {loading ? <LoadingAnimation />
         : (
           <form onSubmit={handleSubmit}>
@@ -55,7 +56,12 @@ const ListOfSessions = () => {
                 name="form-field-name"
                 value={datesLegislaturaOption}
                 onChange={handleChange}
-                options={data.filter((value: any) => value.legislatura === legislaturaOption.value).map((v: any) => ({ value: v.date, label: v.date })) } />
+                //Todo: Change this to any other way
+                options={data.filter((value: any) => value.legislatura === legislaturaOption.value).map((v: any) => ({ label: moment(v.date.toString(), 'YYYY-MM-DD').format('DD-MM-YYYY'), value: v.date })).sort((a: any, b: any) => {
+                  const aDate = moment(a.value, 'YYYY-MM-DD').toDate();
+                  const bDate = moment(b.value, 'YYYY-MM-DD').toDate();
+                  return bDate.getTime() - aDate.getTime();
+                })} />
               <button id="submit_button" type="submit" name={t('session_submit')}>{t('session_submit')}</button>
             </div>
           </form>
