@@ -15,8 +15,8 @@ const Results = () => {
     const { t } = useTranslation();
     const [updatedState, setUpdatedState] = useState(state.results);
     const orderOptions = [
-        { 'value': 'asc-date', 'label': 'Fecha Ascendente' },
-        { 'value': 'desc-date', 'label': 'Fecha Descendente' }
+        { 'value': 'desc-date', 'label': 'Fecha Descendente' },
+        { 'value': 'asc-date', 'label': 'Fecha Ascendente' }
     ];
     const [currentPage, setCurrentPage] = useState(1);
     const [orderValue, setOrderValue] = useState(orderOptions[0]);
