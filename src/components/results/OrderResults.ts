@@ -1,5 +1,5 @@
 import moment from 'moment';
-import SearchResult from '../service/SearchResult';
+import SearchResult from '../../service/SearchResult';
 
 export default function OrderResults(arrayToSort: any, order: string) {
   const results = arrayToSort.sort((a: SearchResult, b: SearchResult) => {

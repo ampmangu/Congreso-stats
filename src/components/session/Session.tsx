@@ -1,12 +1,12 @@
 import { useParams, withRouter } from 'react-router-dom';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import httpClient from '../service/httpClient';
+import httpClient from '../../service/httpClient';
 import '../../styles/session.scss';
 import GroupVotes from './GroupVotes';
 import SessionInfo from './SessionInfo';
 import DetailedVotes from './DetailedVotes';
-import LoadingAnimation from '../LoadingAnimation';
+import LoadingAnimation from '../commons/LoadingAnimation';
 
 const Session = () => {
   const { id }: any = useParams();

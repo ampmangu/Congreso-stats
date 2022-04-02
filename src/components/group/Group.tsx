@@ -2,9 +2,10 @@ import React from 'react';
 import { Link, useParams, withRouter } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import moment from 'moment';
-import httpClient from './service/httpClient';
-import '../styles/group.scss';
-import LoadingAnimation from './LoadingAnimation';
+import httpClient from '../../service/httpClient';
+import '../../styles/group.scss';
+import LoadingAnimation from '../commons/LoadingAnimation';
+import VotesUtils from '../../utils/VotesUtils';
 
 const Group = () => {
   const { group }: any = useParams();
@@ -14,24 +15,6 @@ const Group = () => {
   } = httpClient.useFetch(`${httpClient.urlBase!}/groups/byGroup?group=${group}`);
   const { t } = useTranslation();
 
-  function returnInt(element: string) {
-    return parseInt(element, 10);
-  }
-
-  const getVoteResult = (arrayVotes: any) => {
-    const arrayNumber = arrayVotes.map(returnInt);
-    const index = arrayNumber.indexOf(Math.max.apply(null, arrayNumber));
-    if (index === 0) {
-      return 'vote_positive';
-    }
-    if (index === 1) {
-      return 'vote_negative';
-    }
-    if (index === 2) {
-      return 'vote_abstention';
-    }
-    return 'vote_not_present';
-  };
   return (
     <>
 
@@ -55,7 +38,7 @@ const Group = () => {
                   </p>
                   <div className="voteInfo">
                     {/* eslint-disable-next-line max-len */}
-                    {t(getVoteResult([element.aFavor, element.enContra, element.abstencion, element.nsnc]))}
+                    {t(VotesUtils.getVoteResult([element.aFavor, element.enContra, element.abstencion, element.nsnc]))}
                     .
                     {' '}
                     <Link to={`/sessions/${element.vid}`}>{t('more_info')}</Link>

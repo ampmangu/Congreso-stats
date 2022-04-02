@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 import Select from 'react-select';
 
 import { useTranslation } from 'react-i18next';
-import httpClient from './service/httpClient';
-import '../styles/listOfSessions.scss';
-import LoadingAnimation from './LoadingAnimation';
 import moment from 'moment';
+
+import httpClient from '../../service/httpClient';
+import '../../styles/listOfSessions.scss';
+import LoadingAnimation from '../commons/LoadingAnimation';
 
 const ListOfSessions = () => {
   const [, setDate] = useState('');

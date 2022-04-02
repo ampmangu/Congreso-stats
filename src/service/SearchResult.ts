@@ -4,4 +4,4 @@ export default interface SearchResult {
   legislatura: string,
   textoexpediente: string,
   titulo: string
-}
+};

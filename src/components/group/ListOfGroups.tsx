@@ -1,9 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import httpClient from './service/httpClient';
-import '../styles/listOfGroups.scss';
-import LoadingAnimation from './LoadingAnimation';
+import httpClient from '../../service/httpClient';
+import '../../styles/listOfGroups.scss';
+import LoadingAnimation from '../commons/LoadingAnimation';
 import Select from 'react-select';
 
 const ListOfGroups = () => {

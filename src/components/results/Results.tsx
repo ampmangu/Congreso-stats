@@ -1,17 +1,15 @@
 import React, { useMemo, useState } from 'react';
 import { useLocation, withRouter } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import Select from 'react-select';
-import Pagination from './results/Pagination';
-import OrderFunctions from './results/orderFunctions';
-import '../styles/results.scss';
-import VotacionResult from './results/VotacionResult';
-import SearchResult from './service/SearchResult';
+import Pagination from './Pagination';
+import OrderResults from './OrderResults';
+import '../../styles/results.scss';
+import VotacionResult from './VotacionResult';
+import SearchResult from '../../service/SearchResult';
 
 const Results = () => {
   const PageSize = 10;
   const { state }: any = useLocation();
-  const { t } = useTranslation();
   const [updatedState, setUpdatedState] = useState(state.results);
   const orderOptions = [
     {
@@ -33,7 +31,7 @@ const Results = () => {
   const handleSelectChange = (event: any) => {
     if (event.value !== orderValue.value) {
       const orderBy = event.value;
-      const orderedArray = OrderFunctions(updatedState, orderBy);
+      const orderedArray = OrderResults(updatedState, orderBy);
       setOrderValue(event);
       setUpdatedState(orderedArray);
       setCurrentPage(1);
@@ -58,6 +56,7 @@ const Results = () => {
           </div>
           <div className="listResults">
             {currentTableData.map((votacion: SearchResult) => (
+              // eslint-disable-next-line react/jsx-props-no-spreading
               <VotacionResult {...votacion} />
             ))}
           </div>

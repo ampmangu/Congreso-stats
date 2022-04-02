@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-import httpClient from '../service/httpClient';
+import httpClient from '../../service/httpClient';
 
 const Searcher = () => {
   const [search, setSearch] = React.useState('');

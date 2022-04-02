@@ -1,4 +1,4 @@
-import '../styles/animation.scss';
+import '../../styles/animation.scss';
 import React from 'react';
 
 export default function LoadingAnimation() {
