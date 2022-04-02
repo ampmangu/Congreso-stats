@@ -32,8 +32,19 @@ const doFetch = async (url: string) => {
   });
   return response.json();
 };
+const getResponsePromise = async (search: string) => {
+  const response = await fetch(`${urlBase!}/search?textSearch=${search}`, {
+    mode: 'cors',
+    headers: { 'Content-Type': 'application/json' },
+  });
+  if (response.ok) {
+    return response.json();
+  }
+  throw response;
+};
 export default {
   urlBase,
   useFetch,
   doFetch,
+  getResponsePromise,
 };

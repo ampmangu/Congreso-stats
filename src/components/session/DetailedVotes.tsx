@@ -1,4 +1,4 @@
-export default function DetailedVotes(props: {memberName: any, voted: any, group: any}) {
+export default function DetailedVotes(props: { memberName: any, voted: any, group: any }) {
   return (
     <>
       <div className="flex-cell">

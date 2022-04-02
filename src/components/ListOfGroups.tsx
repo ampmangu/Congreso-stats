@@ -13,11 +13,26 @@ const ListOfGroups = () => {
     loading,
   } = httpClient.useFetch(`${httpClient.urlBase!}/groups`);
   const groupOptions = [
-    { 'value': 'XIV', 'label': 'XIV' },
-    { 'value': 'XIII', 'label': 'XIII' },
-    { 'value': 'XII', 'label': 'XII' },
-    { 'value': 'XI', 'label': 'XI' },
-    { 'value': 'X', 'label': 'X' }
+    {
+      value: 'XIV',
+      label: 'XIV',
+    },
+    {
+      value: 'XIII',
+      label: 'XIII',
+    },
+    {
+      value: 'XII',
+      label: 'XII',
+    },
+    {
+      value: 'XI',
+      label: 'XI',
+    },
+    {
+      value: 'X',
+      label: 'X',
+    },
   ];
   const [groupValue, setGroupValue] = React.useState(groupOptions[0]);
   const handleSelectChange = (event: any) => {
@@ -39,12 +54,17 @@ const ListOfGroups = () => {
       {loading ? <LoadingAnimation />
         : (
           <ul>
-            {data.filter((value: any) => value.legislatura === groupValue.value).map((option: any) => (
-              <li>
-                <Link to={`/groups/${option.grupo.replace(/\s/g, '')}`}>{option.grupo}</Link>
-              </li>
+            {data.filter((value: any) => value.legislatura === groupValue.value)
+              .map((option: any) => (
+                <li>
+                  <Link
+                    to={`/groups/${option.grupo.replace(/\s/g, '')}`}
+                  >
+                    {option.grupo}
+                  </Link>
+                </li>
 
-            ))}
+              ))}
           </ul>
         )}
     </div>

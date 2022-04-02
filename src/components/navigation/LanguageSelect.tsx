@@ -11,9 +11,17 @@ import ListItem from '@material-ui/core/ListItem';
 import ListSubheader from '@material-ui/core/ListSubheader';
 
 const languageMap = {
-  es: { label: 'Español', dir: 'ltr', active: true },
+  es: {
+    label: 'Español',
+    dir: 'ltr',
+    active: true,
+  },
 
-  en: { label: 'English', dir: 'ltr', active: false },
+  en: {
+    label: 'English',
+    dir: 'ltr',
+    active: false,
+  },
 };
 
 const LanguageSelect = () => {
@@ -48,18 +56,19 @@ const LanguageSelect = () => {
         <div>
           <List>
             <ListSubheader>{t('select_language')}</ListSubheader>
-            {Object.keys(languageMap)?.map((item) => (
-              <ListItem
-                button
-                key={item}
-                onClick={() => {
-                  i18next.changeLanguage(item);
-                  setMenuAnchor(null);
-                }}
-              >
-                {languageMap[item].label}
-              </ListItem>
-            ))}
+            {Object.keys(languageMap)
+              ?.map((item) => (
+                <ListItem
+                  button
+                  key={item}
+                  onClick={() => {
+                    i18next.changeLanguage(item);
+                    setMenuAnchor(null);
+                  }}
+                >
+                  {languageMap[item].label}
+                </ListItem>
+              ))}
           </List>
         </div>
       </Popover>
